@@ -17,6 +17,7 @@ export interface IAppProps {
     NUSA_Guids?: string | null;
     NUSA_service?: string | null;
     NUSA_language?: string | null;
+    NUSA_browserSdk?: string | null;
     cookies: Cookies;
     transformedText?: string | null;
     stackTokens: IStackTokens;
@@ -39,6 +40,7 @@ export interface IAppState {
     isNusaLibLoading: boolean;
     supportedLanguages: string[];
     NUSA_userId: string | null;
+    NUSA_browserSdk: string | null;
 }
 
 export class App extends React.Component<IAppProps, IAppState>{
@@ -53,6 +55,7 @@ export class App extends React.Component<IAppProps, IAppState>{
         this.state = {
             transformedText: "",
             NUSA_userId: "",
+            NUSA_browserSdk: "https://speechanywhere.nuancehdp.com/mainline/scripts/Nuance.SpeechAnywhere.uk.js",
             isRecording: false,
             isNusaLibLoaded: false,
             isNusaLibLoading: false,
@@ -177,9 +180,17 @@ export class App extends React.Component<IAppProps, IAppState>{
             this.setState({ isNusaLibLoading: true });
             this.initNusa();
 
+            //@ts-ignore
+            if(this.state.NUSA_browserSdk = this.props.NUSA_browserSdk)
+            {
+                //@ts-ignore
+                this.state.NUSA_browserSdk = this.props.NUSA_browserSdk;
+            }
+
             var script = document.createElement("script");
             script.type = "text/javascript";
-            script.src = "https://speechanywhere.nuancehdp.com/mainline/scripts/Nuance.SpeechAnywhere.js";
+            //@ts-ignore
+            script.src = this.props.NUSA_browserSdk;
             script.id = "nuance-lib";
             document.getElementsByTagName("head")[0].appendChild(script);
             resolve(true);
@@ -197,7 +208,6 @@ export class App extends React.Component<IAppProps, IAppState>{
             NUSA_userId = '${this.props.NUSA_userId}';
             NUSA_applicationName = '${this.props.NUSA_applicationName}'; 
             document.cookie='NUSA_Guids=${this.props.NUSA_Guids}'; 
-            NUSA_service = '${this.props.NUSA_service}';
             NUSA_enableAll = false;
             NUSA_language = "${this.props.NUSA_language}";
         }`; //se till att NUSA_userId inte är ""
