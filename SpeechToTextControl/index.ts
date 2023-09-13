@@ -20,7 +20,7 @@ export class SpeechToTextCtrl implements ComponentFramework.StandardControl<IInp
 		NUSA_userId: "",
 		NUSA_applicationName: "",
 		NUSA_Guids: "",
-		NUSA_service: "",
+		NUSA_browserSdk: "",
 		NUSA_language: "",
 		transformedText: "",
 		cookies: new Cookies("NUSA_Guids"),
@@ -80,7 +80,7 @@ export class SpeechToTextCtrl implements ComponentFramework.StandardControl<IInp
 		this._props.NUSA_userId = context.parameters.NUSA_userId.raw;
 		this._props.NUSA_applicationName = context.parameters.NUSA_applicationName.raw;
 		this._props.NUSA_Guids = context.parameters.NUSA_Guids.raw;
-		this._props.NUSA_service = context.parameters.NUSA_service.raw;
+		this._props.NUSA_browserSdk = context.parameters.NUSA_browserSdk.raw;
 		this._props.NUSA_language = context.parameters.NUSA_language.raw;
 		this._props.transformedText = context.parameters.TransformedText.raw;
 		this._props.buttonColorHEX = context.parameters?.buttonColorHEX?.raw;

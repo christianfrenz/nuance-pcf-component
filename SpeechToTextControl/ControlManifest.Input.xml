@@ -24,7 +24,7 @@
     <property name="NUSA_userId" display-name-key="NUSA_userId" description-key="NUSA_userId" of-type="SingleLine.TextArea" usage="input" required="true" />
     <property name="NUSA_applicationName" display-name-key="NUSA_applicationName" description-key="NUSA_applicationName" of-type="SingleLine.TextArea" usage="input" required="true" />
     <property name="NUSA_Guids" display-name-key="NUSA_Guids" description-key="NUSA_Guids" of-type="SingleLine.TextArea" usage="input" required="true" />
-    <property name="NUSA_service" display-name-key="NUSA_service" description-key="NUSA_service" of-type="SingleLine.TextArea" usage="input" required="true" />
+    <property name="NUSA_browserSdk" display-name-key="NUSA_browserSdk" description-key="NUSA_browserSdk" of-type="SingleLine.TextArea" usage="input" required="true" />
     <property name="NUSA_language" display-name-key="NUSA_language" description-key="NUSA_language" of-type="SingleLine.TextArea" usage="input" required="true" />
     <property name="gapBetweenElements" display-name-key="gapBetweenElements" description-key="gapBetweenElements" of-type="Whole.None" usage="input" required="false" default-value="30" />
     <property name="buttonColorHEX" display-name-key="buttonColorHEX" description-key="buttonColorHEX" of-type="SingleLine.TextArea" usage="input" required="false" default-value="#0078d4" />

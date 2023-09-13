@@ -15,9 +15,8 @@ export interface IAppProps {
     NUSA_userId: string | null;
     NUSA_applicationName?: string | null;
     NUSA_Guids?: string | null;
-    NUSA_service?: string | null;
-    NUSA_language?: string | null;
     NUSA_browserSdk?: string | null;
+    NUSA_language?: string | null;
     cookies: Cookies;
     transformedText?: string | null;
     stackTokens: IStackTokens;
@@ -63,6 +62,8 @@ export class App extends React.Component<IAppProps, IAppState>{
                 "sv-SE",
                 "da-DK",
                 "en-US",
+                "en-GB",
+                "de-DE",
                 "ca",
                 "da",
                 "nl",
@@ -180,12 +181,12 @@ export class App extends React.Component<IAppProps, IAppState>{
             this.setState({ isNusaLibLoading: true });
             this.initNusa();
 
-            //@ts-ignore
-            if(this.state.NUSA_browserSdk = this.props.NUSA_browserSdk)
-            {
-                //@ts-ignore
-                this.state.NUSA_browserSdk = this.props.NUSA_browserSdk;
-            }
+            // //@ts-ignore
+            // if(this.state.NUSA_browserSdk = this.props.NUSA_browserSdk)
+            // {
+            //     //@ts-ignore
+            //     this.state.NUSA_browserSdk = this.props.NUSA_browserSdk;
+            // }
 
             var script = document.createElement("script");
             script.type = "text/javascript";

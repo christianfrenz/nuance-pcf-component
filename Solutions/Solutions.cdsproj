@@ -45,7 +45,6 @@
   
   <ItemGroup>
     <ProjectReference Include="..\Nuance SDK PCF.pcfproj" />
-    <ProjectReference Include="../Nuance SDK PCF.pcfproj" />
   </ItemGroup>
 
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
